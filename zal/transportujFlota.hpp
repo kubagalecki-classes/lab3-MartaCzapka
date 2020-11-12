@@ -9,8 +9,9 @@ unsigned int transportujFlota(unsigned int towar)
       int licznik_tow=0;
       int licznik_zagl=0;
       while(licznik_tow < towar)
-      do{
+      {
         int temp_towar = 0;
+        Statek* stateczek;
         stateczek();
         if(dynamic_cast<Zaglowiec*>(stateczek) != 0)
           licznik_zagl++;
