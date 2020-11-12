@@ -19,7 +19,7 @@ unsigned int transportujFlota(unsigned int towar)
           licznik_zagl++;
         delete stateczek;
       }
-      
+      return licznik_zagl;
     }
     return 0;
 }
