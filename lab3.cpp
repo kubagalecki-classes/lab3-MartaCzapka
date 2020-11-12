@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
-class Figura
+class BytGeometryczny
+{
+public:
+    virtual void id() const = 0;
+};
+class Figura : public BytGeometryczny
 {
 private:
     // protected:
@@ -9,8 +14,8 @@ private:
 public:
     Figura(double P) { pole = P; }
     // void   setP(double P) { pole = P; }
-    double       getP() const { return pole; }
-    virtual void id() const { cout << "Figura o polu: " << pole << "\n"; }
+    double getP() const { return pole; }
+    // virtual void id() const { cout << "Figura o polu: " << pole << "\n"; }
     virtual ~Figura() { cout << "niszcze Figure \n"; }
 };
 class Kolo : public Figura
@@ -39,10 +44,11 @@ public:
 };
 void id(const Figura& f)
 {
-    f.id();
+    // f.id();
 }
 int main()
 {
+    // BytGeometryczny bytek; //nie mozna
     /*Kolo     k{3};
     Kwadrat  kw{2};
     Kwadrat  kp{1};
@@ -50,6 +56,7 @@ int main()
     Figura   Fig{2};
     */
     Figura* f = new Kwadrat{2};
+    f->id();
     delete f;
     // Kwadrat* kwad = dynamic_cast< Kwadrat* >(f);
     // Kolo*    kolo = dynamic_cast< Kolo* >(f);
