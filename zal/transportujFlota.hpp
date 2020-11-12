@@ -6,8 +6,8 @@ unsigned int transportujFlota(unsigned int towar)
 {
     if(towar !=0)
     {
-      int licznik_tow=0;
-      int licznik_zagl=0;
+      unsigned int licznik_tow=0;
+      unsigned int zaglowce=0;
       while(licznik_tow < towar)
       {
         int temp_towar = 0;
@@ -15,13 +15,13 @@ unsigned int transportujFlota(unsigned int towar)
         Statek* stateczek = sto();
         temp_towar=stateczek->transportuj();
         licznik_tow = licznik_tow + temp_towar;
-        if(dynamic_cast<Zaglowiec>(stateczek) != nullptr)
+        if(dynamic_cast<Zaglowiec*>(stateczek) != nullptr)
         {
-          licznik_zagl++;
+          zaglowce=zaglowce+1;
         }
         delete stateczek;
       }
-      return licznik_zagl;
+      return zaglowce;
     }
     return 0;
 }
