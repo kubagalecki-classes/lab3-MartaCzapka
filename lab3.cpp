@@ -9,8 +9,9 @@ private:
 public:
     Figura(double P) { pole = P; }
     // void   setP(double P) { pole = P; }
-    double getP() { return pole; }
-    void   id() const { cout << "Figura o polu: " << pole << "\n"; }
+    double       getP() const { return pole; }
+    virtual void id() const { cout << "Figura o polu: " << pole << "\n"; }
+    virtual ~Figura() { cout << "niszcze Figure \n"; }
 };
 class Kolo : public Figura
 {
@@ -20,8 +21,9 @@ public:
         // pole = 3.14 * r * r;
         // setP(pole);
     }
-    void id() { cout << "Kolo o polu: " << getP() << "\n"; }
+    virtual void id() const override { cout << "Kolo o polu: " << getP() << "\n"; }
     // double p;
+    virtual ~Kolo() { cout << "niszcze Kolo \n"; }
 };
 class Kwadrat : public Figura
 {
@@ -31,8 +33,9 @@ public:
         // pole = a * a;
         // setP(pole);
     }
-    void id() { cout << "Kwadrat o polu: " << getP() << "\n"; }
+    void id() const override { cout << "Kwadrat o polu: " << getP() << "\n"; }
     // double p;
+    virtual ~Kwadrat() { cout << "niszcze Kwadrat \n"; }
 };
 void id(const Figura& f)
 {
@@ -40,17 +43,25 @@ void id(const Figura& f)
 }
 int main()
 {
-    Kolo    k{3};
-    Kwadrat kw{2};
-    Kwadrat kp{1};
-    Figura  f = static_cast< Figura >(kp);
-    Figura  Fig{2};
+    /*Kolo     k{3};
+    Kwadrat  kw{2};
+    Kwadrat  kp{1};
+    Figura   fi = static_cast< Figura >(kp);
+    Figura   Fig{2};
+    */
+    Figura* f = new Kwadrat{2};
+    delete f;
+    // Kwadrat* kwad = dynamic_cast< Kwadrat* >(f);
+    // Kolo*    kolo = dynamic_cast< Kolo* >(f);
+    // kwad->id();
+    // kolo->id(); // to tak ma byc?
     // double  poleKola = k.getP();
     // cout << poleKola << "\n";
     // double poleKwad = kw.getP();
     // cout << poleKwad << "\n";
-    k.id();
-    kw.id();
-    kp.id();
-    id(f);
+    // k.id();
+    // kw.id();
+    // kp.id();
+    // id(kp);
+    // id(fi);
 }
