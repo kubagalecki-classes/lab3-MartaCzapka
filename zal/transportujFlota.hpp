@@ -23,5 +23,5 @@ unsigned int transportujFlota(unsigned int towar)
       }
       return zaglowce;
     }
-    return 0;
+   // return 0;
 }
