@@ -64,6 +64,9 @@ int main()
     if (dynamic_cast< Kwadrat* >(f) != 0) {
         cout << "kwadrat";
     }
+    if (dynamic_cast< void* >(f) == Kwadrat) {
+        cout << "kwadrat";
+    }
     // Kwadrat* kwad = dynamic_cast< Kwadrat* >(f);
     // Kolo*    kolo = dynamic_cast< Kolo* >(f);
     // kwad->id();
