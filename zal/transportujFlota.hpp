@@ -12,8 +12,9 @@ unsigned int transportujFlota(unsigned int towar)
       {
         int temp_towar = 0;
         Stocznia sto{};
-        Zaglowiec* stateczek_z = sto();
-        Tankowiec* stateczek_t = sto();
+        Statek* stateczek = sto();
+        Tankowiec* stateczek_t = stateczek;
+        Zaglowiec* stateczek_z = stateczek;
         if(dynamic_cast<Zaglowiec*>(stateczek_z))
        {
          temp_towar=stateczek_z->transportuj();
