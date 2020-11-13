@@ -15,7 +15,7 @@ unsigned int transportujFlota(unsigned int towar)
         Statek* stateczek = sto();
         temp_towar=stateczek->transportuj();
         licznik_tow = licznik_tow + temp_towar;
-        if(dynamic_cast<Zaglowiec*>(stateczek) == 0)
+        if(dynamic_cast<Zaglowiec*>(sto) != 0)
        {
           zaglowce=zaglowce+1;
         }

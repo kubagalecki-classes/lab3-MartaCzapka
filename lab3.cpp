@@ -57,7 +57,13 @@ int main()
     */
     Figura* f = new Kwadrat{2};
     f->id();
-    delete f;
+    // delete f;
+    if (dynamic_cast< Kwadrat* >(f) == 0) {
+        cout << "nie kwadrat";
+    }
+    if (dynamic_cast< Kwadrat* >(f) != 0) {
+        cout << "kwadrat";
+    }
     // Kwadrat* kwad = dynamic_cast< Kwadrat* >(f);
     // Kolo*    kolo = dynamic_cast< Kolo* >(f);
     // kwad->id();
